@@ -1,0 +1,16 @@
+win screen blue  --  #5FA0A0
+dark blue        --  #000480
+light blue       --  #00FFFF
+very light blue  --  #F77A7A
+topbox blue      --  #0F8D9E  (corner shaping)
+bottombox blue   --  #1D2343  (corner shaping)
+
+win screen red   --  #A05F5F
+dark red         --  #3A0603
+light red        --  #FF0000
+very light red   --  #83F7F7
+topbox red       --  #8C0F20  (corner shaping)
+bottombox red    --  #231D3E  (corner shaping)
+
+darkbg           --  #1E1E3F
+lightbg          --  #2D2B55

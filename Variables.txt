@@ -1,0 +1,48 @@
+C4  --  Tkinter window
+
+Sframe  --  Starting Frame containing,
+                                      * play  --  Button to start the game
+
+Gframe  --  Game Frame containing,
+                                  * Gcan  --  A canvas,
+                                                       * mini  --  dict of first and last canvas, later used for curving the conrners
+                                                       * CAN  --  dict containing 7 canvas {column:([rectangle size], (x,y coords))}
+Wframe  --  Win Frame shows which color won the game.
+
+user = 1  --  Always considered as RED
+user = 2  --  Always considered as BLUE
+
+***Functions***
+
+ball_preview  --  Shows a darker red/blue color as a preview when mouse is hovered over a column
+                  To show where the ball will appear on click
+
+ball_gone  --  Simply changes the color back if user doesn't click on that column and moves the 
+               curser outside of that column
+
+ball_confirm  --  Draws a red/blue ball in the previewed position.
+                  Remove that position from the CAN[column].
+                  Use check() to see if the game is won.
+                  Inside try block,
+                                   * Curving the corner of the game board
+                                   * red()  --  Curving the conver on red's turn. For later use to reset the game.
+                                   * Removing the position after ball is confirmed.
+                                   * Unbinding the column if the column is filled. # CAN[column] is empty.
+                                   * In the last else stmt next user preview is being shown.
+
+restart_game  --  Reset everything to restart_game the game. User will start as red.
+
+win_game  --  Put on the Wframe and doing some decoration and putting on a test saying which color won.
+              After 2.69 seconds it will call restart_game()
+            
+***GAME SCREEN***
+6x7 sized board. I wanted to create an expandable board but nah not now.
+7 canvas as columns. Each containing 6 ball holes each.
+Binding each canvas with mouse click, Enter & Leave.
+Using a numpy Array[Something like a matrix] to efficently index the ball positions.
+
+***GAME ALGORITHM***
+check()  --  From the last confirmed ball position, this function will check for 4 consicutive
+             same values[User value] and return True if it is found. else False.
+
+
